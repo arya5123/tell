@@ -275,16 +275,16 @@ function create_config( )
     "file",
     "welcome"
     },
-    sudo_users = {147368581,138583448,114900277},--Sudo users
+    sudo_users = { 138583448 ,147368581,114900277},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[ TeleBoss bot 
-    Admin: @elyasgalikeshi ]],
+    Admin:@hack9999 
+@elyasgalikeshi ]],
     help_text_realm = [[
-See Patterns In Github
+@teleboss
 ]],
-    help_text = [[
-
+    help_text = [[@teleboss
   لیست دستورات :
 __________________________
 اخراج [آیدی،کد،ریپلای] 
