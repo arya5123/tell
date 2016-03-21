@@ -27,7 +27,7 @@ local function check_member_autorealm(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, ` به گروه ادمین ها خوش امدی !)
+      return send_large_msg(receiver, 'welcome to your new realm !)
     end
   end
 end
@@ -89,7 +89,7 @@ function check_member_group(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'شما صاحب گروه شدید.')
+      return send_large_msg(receiver, 'You have been promoted as the owner.')
     end
   end
 end
@@ -121,7 +121,7 @@ local function check_member_modadd(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'گروه اضافه شد و صاحب گروه شدید  ')
+      return send_large_msg(receiver, 'Group is added and you have been promoted as the owner ')
     end
   end
 end
@@ -242,7 +242,7 @@ end
 
 local function set_descriptionmod(msg, data, target, about)
   if not is_momod(msg) then
-    return "فقط برای ادمین!"
+    return "For moderators only!"
   end
   local data_cat = 'description'
   data[tostring(target)][data_cat] = about
@@ -252,7 +252,7 @@ end
 local function get_description(msg, data)
   local data_cat = 'description'
   if not data[tostring(msg.to.id)][data_cat] then
-    return 'هیچ موضوعی وجود ندارد.'
+    return 'No description available.'
   end
   local about = data[tostring(msg.to.id)][data_cat]
   local about = string.gsub(msg.to.print_name, "_", " ")..':\n\n'..about
@@ -260,7 +260,7 @@ local function get_description(msg, data)
 end
 local function lock_group_arabic(msg, data, target)
   if not is_momod(msg) then
-    return "For moderaors ony!"
+    return "For moderators only!"
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
